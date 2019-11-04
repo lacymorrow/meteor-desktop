@@ -1,0 +1,18 @@
+// This propagates the version from package.json to Meteor plugins.
+var _require = require('../../package.json'),
+    version = _require.version;
+
+var fs = require('fs');
+
+var paths = ['./plugins/bundler/package.js', './plugins/watcher/package.js'];
+paths.forEach(function (path) {
+  var packageJs = fs.readFileSync(path, 'UTF-8');
+  packageJs = packageJs.replace(/(version: ')([^']+)'/, `$1${version}'`);
+
+  if (~path.indexOf('watcher')) {
+    packageJs = packageJs.replace(/(omega:meteor-desktop-bundler@)([^']+)'/, `$1${version}'`);
+  }
+
+  fs.writeFileSync(path, packageJs);
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL2xpYi9zY3JpcHRzL3Byb3BhZ2F0ZVZlcnNpb24uanMiXSwibmFtZXMiOlsicmVxdWlyZSIsInZlcnNpb24iLCJmcyIsInBhdGhzIiwiZm9yRWFjaCIsInBhdGgiLCJwYWNrYWdlSnMiLCJyZWFkRmlsZVN5bmMiLCJyZXBsYWNlIiwiaW5kZXhPZiIsIndyaXRlRmlsZVN5bmMiXSwibWFwcGluZ3MiOiJBQUFBO2VBRW9CQSxRQUFRLG9CQUFSLEM7SUFBWkMsTyxZQUFBQSxPOztBQUNSLElBQU1DLEtBQUtGLFFBQVEsSUFBUixDQUFYOztBQUVBLElBQU1HLFFBQVEsQ0FBQyw4QkFBRCxFQUFpQyw4QkFBakMsQ0FBZDtBQUNBQSxNQUFNQyxPQUFOLENBQWMsVUFBQ0MsSUFBRCxFQUFVO0FBQ3BCLE1BQUlDLFlBQVlKLEdBQUdLLFlBQUgsQ0FBZ0JGLElBQWhCLEVBQXNCLE9BQXRCLENBQWhCO0FBQ0FDLGNBQVlBLFVBQVVFLE9BQVYsQ0FBa0Isc0JBQWxCLEVBQTJDLEtBQUlQLE9BQVEsR0FBdkQsQ0FBWjs7QUFDQSxNQUFJLENBQUNJLEtBQUtJLE9BQUwsQ0FBYSxTQUFiLENBQUwsRUFBOEI7QUFDMUJILGdCQUFZQSxVQUFVRSxPQUFWLENBQWtCLHlDQUFsQixFQUE4RCxLQUFJUCxPQUFRLEdBQTFFLENBQVo7QUFDSDs7QUFDREMsS0FBR1EsYUFBSCxDQUFpQkwsSUFBakIsRUFBdUJDLFNBQXZCO0FBQ0gsQ0FQRCIsImZpbGUiOiJwcm9wYWdhdGVWZXJzaW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gVGhpcyBwcm9wYWdhdGVzIHRoZSB2ZXJzaW9uIGZyb20gcGFja2FnZS5qc29uIHRvIE1ldGVvciBwbHVnaW5zLlxuXG5jb25zdCB7IHZlcnNpb24gfSA9IHJlcXVpcmUoJy4uLy4uL3BhY2thZ2UuanNvbicpO1xuY29uc3QgZnMgPSByZXF1aXJlKCdmcycpO1xuXG5jb25zdCBwYXRocyA9IFsnLi9wbHVnaW5zL2J1bmRsZXIvcGFja2FnZS5qcycsICcuL3BsdWdpbnMvd2F0Y2hlci9wYWNrYWdlLmpzJ107XG5wYXRocy5mb3JFYWNoKChwYXRoKSA9PiB7XG4gICAgbGV0IHBhY2thZ2VKcyA9IGZzLnJlYWRGaWxlU3luYyhwYXRoLCAnVVRGLTgnKTtcbiAgICBwYWNrYWdlSnMgPSBwYWNrYWdlSnMucmVwbGFjZSgvKHZlcnNpb246ICcpKFteJ10rKScvLCBgJDEke3ZlcnNpb259J2ApO1xuICAgIGlmICh+cGF0aC5pbmRleE9mKCd3YXRjaGVyJykpIHtcbiAgICAgICAgcGFja2FnZUpzID0gcGFja2FnZUpzLnJlcGxhY2UoLyhvbWVnYTptZXRlb3ItZGVza3RvcC1idW5kbGVyQCkoW14nXSspJy8sIGAkMSR7dmVyc2lvbn0nYCk7XG4gICAgfVxuICAgIGZzLndyaXRlRmlsZVN5bmMocGF0aCwgcGFja2FnZUpzKTtcbn0pO1xuIl19

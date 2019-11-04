@@ -1,0 +1,6 @@
+module.exports = {
+  electron: '2.0.10',
+  'electron-builder': '20.28.4',
+  'electron-packager': '12.1.2'
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2xpYi9kZWZhdWx0RGVwZW5kZW5jaWVzLmpzIl0sIm5hbWVzIjpbIm1vZHVsZSIsImV4cG9ydHMiLCJlbGVjdHJvbiJdLCJtYXBwaW5ncyI6IkFBQUFBLE9BQU9DLE9BQVAsR0FBaUI7QUFDYkMsWUFBVSxRQURHO0FBRWIsc0JBQW9CLFNBRlA7QUFHYix1QkFBcUI7QUFIUixDQUFqQiIsImZpbGUiOiJkZWZhdWx0RGVwZW5kZW5jaWVzLmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSB7XG4gICAgZWxlY3Ryb246ICcyLjAuMTAnLFxuICAgICdlbGVjdHJvbi1idWlsZGVyJzogJzIwLjI4LjQnLFxuICAgICdlbGVjdHJvbi1wYWNrYWdlcic6ICcxMi4xLjInXG59O1xuXG4iXX0=
