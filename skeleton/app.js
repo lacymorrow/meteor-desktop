@@ -665,7 +665,6 @@ export default class App {
                 this.windowAlreadyLoaded = true;
                 this.l.debug('showing main window');
                 this.emit('beforeLoadFinish');
-                this.window.show();
                 this.window.focus();
                 if (this.settings.devtron && !this.isProduction()) {
                     this.webContents.executeJavaScript('Desktop.devtron.install()');
