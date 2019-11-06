@@ -577,6 +577,9 @@ export default class App {
         this.currentPort = port;
 
         this.window = new BrowserWindow(windowSettings);
+        this.window.maximize()
+        this.window.show()
+
         this.window.on('closed', () => {
             this.window = null;
         });
